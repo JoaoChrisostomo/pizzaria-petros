@@ -1,24 +1,30 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../../styles/home.module.scss'
+import styles from '../../../styles/home.module.scss'
 
-import logoImg from '../../public/logoTelaLogin.png'
-import { Input } from '../components/common/input'
-import { Button } from '../components/common/Button'
+import logoImg from '../../../public/logoTelaLogin.png'
+import { Input } from '../../components/common/input'
+import { Button } from '../../components/common/Button'
 
 import Link from 'next/link'
 
-export default function Home() {
+export default function Signup() {
   return (
     <>
       <Head>
-      <title>Petros pizza italiana - Faça seu login</title>
+      <title>Faça seu cadastro agora!</title>
       </Head>
       <div className={styles.containerCenter}>
         <Image src={logoImg} alt="Logo Pizzaria Petros" width="400px" height="200px"/>
 
         <div className={styles.login}>
+          <h1>Criando sua conta</h1>
           <form>
+            <Input 
+              placeholder='Digite seu nome'
+              type="text"
+            />
+
             <Input 
               placeholder='Digite seu email'
               type="text"
@@ -33,11 +39,11 @@ export default function Home() {
               type="submit"
               loading={true}
             >
-              Acessar
+              Cadastrar
             </Button>
           </form>
-          <Link href="/signup">
-            <a className={styles.text}> Não possui uma conta? Cadastre-se</a>
+          <Link href="/">
+            <a className={styles.text}> Já possui uma conta? Faça-login</a>
           </Link>
         </div>
       </div>
